@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# hiporankplusplus
+data/
+results/
+models/
+hpp_test.py
