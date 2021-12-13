@@ -37,14 +37,23 @@ class UnsupervisedClustering(IdentityClustering):
     def get_clusters(self,  embeds: Embeddings, doc: Document) -> typing.Tuple[Embeddings, Document]:
         # flatten doc/embeds into array of sentences/embeds
         all_embeddings, all_sentences = self.flatten(embeds, doc)
+        all_embeddings, all_sentences = all_embeddings[:1], all_sentences[:1]
+        if len(all_embeddings) == 1:
+            return embeds, doc  # do not cluster if only 1 sentence
         # get cluster labels from embeddings
         if self.select_best_n_cluster:
             n_cluster = 1  # TODO select best n_cluster
         else:
-            n_cluster = len(embeds.section)
+            n_cluster = min(len(all_embeddings), len(embeds.section))
         cluster_obj = self.clustering_algorithm(
             **self.clustering_args, n_clusters=n_cluster)
-        cluster_labels = cluster_obj.fit_predict(all_embeddings)
+        try:
+            cluster_labels = cluster_obj.fit_predict(all_embeddings)
+        except:
+            print(all_embeddings.shape)
+            print(len(all_sentences))
+            print(doc.reference)
+            raise ValueError
         # create new Embeddings and Document object with sections based on cluster labels
         # generate new Embedding object
         cluster_ids = ["CLUSTER" + str(i) for i in range(n_cluster)]
@@ -64,15 +73,15 @@ class UnsupervisedClustering(IdentityClustering):
         # sanity check
         if self.debug:
             similarities = self.cos_similarity(all_embeddings)
-            print(np.min(similarities), np.max(similarities), np.mean(similarities))
-            assert np.all(np.sum(cluster_masks, axis=0) == 1), cluster_masks
-            # TODO plot clusterings
-            print(all_embeddings.shape, cluster_labels.shape, cluster_labels)
-            n_sentences = sum([len(x.sentences) for x in doc.sections])
-            n_new_sentences = sum([len(x.sentences) for x in doc_obj.sections])
-            assert n_sentences == n_new_sentences, (n_sentences, n_new_sentences)
-            for id, sentences in zip(cluster_ids, section_sentences):
-                print(embeds)
-                print(id, 'n_sentences =', len(sentences))
-                print_sentence_summary(sentences)
+            # print(np.min(similarities), np.max(similarities), np.mean(similarities))
+            # assert np.all(np.sum(cluster_masks, axis=0) == 1), cluster_masks
+            # # TODO plot clusterings
+            # print(all_embeddings.shape, cluster_labels.shape, cluster_labels)
+            # n_sentences = sum([len(x.sentences) for x in doc.sections])
+            # n_new_sentences = sum([len(x.sentences) for x in doc_obj.sections])
+            # assert n_sentences == n_new_sentences, (n_sentences, n_new_sentences)
+            # for id, sentences in zip(cluster_ids, section_sentences):
+            #     print(embeds)
+            #     print(id, 'n_sentences =', len(sentences))
+            #     print_sentence_summary(sentences)
         return embeds_obj, doc_obj
