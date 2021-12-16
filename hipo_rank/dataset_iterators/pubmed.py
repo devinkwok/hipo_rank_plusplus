@@ -86,3 +86,10 @@ class PubmedDataset(object):
             sections = [self._get_sections(doc) for doc in docs]
             references = [self._get_reference(doc) for doc in docs]
             return [Document(sections=s, reference=r) for s,r in zip(sections, references)]
+
+
+def save_to_file(file, docs):
+    with open(file, 'w') as f:
+        for d in docs:
+            json.dump({s.id: s.sentences for s in d.sections}, f)
+            f.write("\n")

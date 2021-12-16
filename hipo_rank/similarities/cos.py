@@ -68,12 +68,18 @@ class CosSimilarity:
         return Similarities(sent_to_sent, sect_to_sect, sent_to_sect)
 
 
-
-
-
-
-
-
-
-
-
+def intrasection_similarity(similarities: Similarities):
+    means, mins, maxes = [], [], []
+    for section in similarities.sent_to_sent:
+        sims = section.similarities
+        if len(sims) > 0:
+            means += [np.mean(sims)]
+            mins += [np.min(sims)]
+            maxes += [np.max(sims)]
+    means = np.array(means)
+    mins = np.array(mins)
+    maxes = np.array(maxes)
+    if len(means > 0):
+        return [np.mean(means), np.min(means), np.max(means), np.mean(mins), np.mean(maxes)]
+    else:
+        return [np.array(1.), np.array(1.), np.array(1.), np.array(1.), np.array(1.)]
