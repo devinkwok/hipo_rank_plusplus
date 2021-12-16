@@ -2,7 +2,6 @@ import numpy as np
 import typing
 
 from hipo_rank import Embeddings, Document
-from hipo_rank.similarities.cos import CosSimilarity
 
 
 class IdentityClustering:
@@ -13,7 +12,3 @@ class IdentityClustering:
         all_sentences = np.array([s for t in doc.sections for s in t.sentences], dtype=object)
         all_embeddings = np.concatenate([x.embeddings for x in embeds.sentence], axis=0)
         return all_embeddings, all_sentences
-
-    def cos_similarity(self, embeds: Embeddings):
-        similarities = CosSimilarity()._get_pairwise_similarities(embeds)
-        return similarities[0]

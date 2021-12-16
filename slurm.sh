@@ -23,5 +23,5 @@ pip install -r $SRC_DIR/requirements.txt
 pyrouge_set_rouge_path $SRC_DIR/ROUGE-1.5.5/
 
 python $SRC_DIR/hpp_test.py
-# python $SRC_DIR/hpp_clustering.py
 # python $SRC_DIR/hpp_baseline.py
+# python $SRC_DIR/hpp_clustering.py

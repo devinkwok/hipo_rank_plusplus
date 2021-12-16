@@ -34,14 +34,22 @@ DATASETS = [
     ("pubmed_val", PubmedDataset, {"file_path": "data/pubmed-release/val.txt"}),
 ]
 EMBEDDERS = [
-    ("pacsum_bert", BertEmbedder,
-     {"bert_config_path": "models/pacssum_models/bert_config.json",
-      "bert_model_path": "models/pacssum_models/pytorch_model_finetuned.bin",
-      "bert_tokenizer": "bert-base-uncased",
+    ("rand_200", RandEmbedder, {"dim": 200}),
+    ("bert", BertEmbedder,
+     {"bert_config_path": "",
+      "bert_model_path": "",
+      "bert_tokenizer": "bert-base-cased",
+      "bert_pretrained": "bert-base-cased",
       "cuda": True,
       }
     ),
-    ("rand_200", RandEmbedder, {"dim": 200}),
+    # ("pacsum_bert", BertEmbedder,
+    #  {"bert_config_path": "models/pacssum_models/bert_config.json",
+    #   "bert_model_path": "models/pacssum_models/pytorch_model_finetuned.bin",
+    #   "bert_tokenizer": "bert-base-uncased",
+    #   "cuda": True,
+    #   }
+    # ),
 ]
 SIMILARITIES = [
     ("cos", CosSimilarity, {}),
@@ -69,7 +77,7 @@ CLUSTERINGS = [
         }),
 ]
 SCORERS = [
-    ("add_f=0.0_b=1.0_s=0.5", AddScorer, {"section_weight": 0.5}),
+    ("add_f=0.0_b=1.0_s=1.0", AddScorer, {}),
 ]
 
 Summarizer = DefaultSummarizer()
