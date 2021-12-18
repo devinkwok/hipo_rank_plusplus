@@ -19,7 +19,7 @@ from hipo_rank.evaluators.rouge import evaluate_rouge
 
 from hipo_rank.clusterings.cluster import IdentityClustering, remove_duplicates_from_doc
 from hipo_rank.clusterings.unsupervised import UnsupervisedClustering, \
-     RandomClusteringAlgorithm, SpectralWithCosineAffinity, section_stats
+     RandomClusteringAlgorithm, SpectralWithCosineAffinity, KMeansWithBestK, section_stats
 from sklearn.cluster import SpectralClustering
 
 from pathlib import Path
@@ -35,6 +35,9 @@ DEBUG = False
 REMOVE_DUPLICATE_SENTENCES = [True, False]
 DATASETS = [
     ("pubmed_val", PubmedDataset, {"file_path": "data/pubmed-release/val.txt"}),
+    ("pubmed_val_no_sections", PubmedDataset,
+     {"file_path": "data/pubmed-release/val.txt", "no_sections": True}
+     ),
 ]
 EMBEDDERS = [
     ("bert", BertEmbedder,
@@ -66,22 +69,29 @@ DIRECTIONS = [
 ]
 CLUSTERINGS = [
     ('none', IdentityClustering, {}),
+    ('kmeanspickk', UnsupervisedClustering, {
+            "clustering_algorithm": KMeansWithBestK,
+            "clustering_args": {"select_best_n_cluster": True, "range": (3,4)},
+            "debug": DEBUG,
+        }),
+    ('kmeanssectk', UnsupervisedClustering, {
+            "clustering_algorithm": KMeansWithBestK,
+            "clustering_args": {"select_best_n_cluster": False},
+            "debug": DEBUG,
+        }),
     ('spectralcos', UnsupervisedClustering, {
             "clustering_algorithm": SpectralWithCosineAffinity,
             "clustering_args": {"assign_labels": "kmeans"},
-            "select_best_n_cluster": False,
             "debug": DEBUG,
         }),
     ('spectralrbf', UnsupervisedClustering, {
             "clustering_algorithm": SpectralClustering,
             "clustering_args": {"affinity": "rbf", "assign_labels": "kmeans"},
-            "select_best_n_cluster": False,
             "debug": DEBUG,
         }),
     ('random', UnsupervisedClustering, {
             "clustering_algorithm": RandomClusteringAlgorithm,
             "clustering_args": {},
-            "select_best_n_cluster": False,
             "debug": DEBUG,
         }),
 ]
@@ -156,6 +166,6 @@ for dataset_id, dataset, dataset_args in DATASETS:
                     stats = np.concatenate([sect_stats, sim_stats], axis=0)
                     if DEBUG:
                         print(stats)
-                    torch.save(stats, results_path / f'{dataset_id}-{no_duplicates}-{clustering_id}-{similarity_id}-stats.pt')
+                    torch.save(stats, results_path / f'{dataset_id}-{no_duplicates}-{embedder_id}-{clustering_id}-{similarity_id}-stats.pt')
                 # save clusters for reference
-                save_to_file(results_path / f'{dataset_id}-{no_duplicates}-{clustering_id}-clusters.txt', docs)
+                save_to_file(results_path / f'{dataset_id}-{no_duplicates}-{embedder_id}-{clustering_id}-clusters.txt', docs)

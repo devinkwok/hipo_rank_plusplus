@@ -6,7 +6,8 @@ from hipo_rank import Document, Section, Embeddings, SentenceEmbeddings, Section
 from hipo_rank.clusterings.cluster import IdentityClustering
 from hipo_rank.similarities.cos import CosSimilarity
 
-from sklearn.cluster import SpectralClustering
+from sklearn.cluster import SpectralClustering, KMeans
+from sklearn.preprocessing import MinMaxScaler
 
 
 def print_sentence_summary(sentences: typing.List[str], ids: typing.List[int]=None):
@@ -44,16 +45,64 @@ class SpectralWithCosineAffinity:
         similarities = self.sim_matrix(embeddings)
         return self.spectral.fit_predict(similarities)
 
+    # from Arthur's code
+class KMeansWithBestK:
+    def __init__(self, 
+                 n_clusters,
+                 select_best_n_cluster: bool=False,
+                 max_clusters: int=15,
+                 range = (3,4),  # empirically determined from previous runs, saves time to only try these values
+                 ):
+        self.select_best_n_cluster = select_best_n_cluster
+        self.max_clusters = max_clusters
+        self.range = range
+        self.n_clusters = n_clusters
+
+    def fit_predict(self, embeddings):
+        embeddings = self._normalize(embeddings)
+        if self.select_best_n_cluster:
+            k = self._pick_optimal_k(embeddings)
+        else:
+            k = self.n_clusters
+        km = KMeans(k)
+        return km.fit_predict(embeddings)
+
+    def _normalize(self, embeddings):
+        mms = MinMaxScaler()
+        mms.fit(embeddings)
+        return mms.transform(embeddings)
+
+    def _pick_optimal_k(self, normalized_embeddings):
+        Sum_of_squared_distances = []
+        m = min(self.max_clusters, normalized_embeddings.shape[0])
+        K = range(1,m)
+        models = []
+        for k in K:
+            if (k >= self.range[0] and k <= self.range[1]) or k == 1 or k == m-1:
+                km = KMeans(k)
+                km = km.fit(normalized_embeddings)
+                models.append(km)
+                Sum_of_squared_distances.append(km.inertia_)
+            else:
+                Sum_of_squared_distances.append(None)
+        dists = [self._distance_lineAB_pointC(
+            np.array([K[0],Sum_of_squared_distances[0]]),
+            np.array([K[-1],Sum_of_squared_distances[-1]]),
+            np.array([k,p])) if p is not None else 0 for (k,p) in zip(K,Sum_of_squared_distances)]
+        return np.argmax(dists) + 1
+
+    def _distance_lineAB_pointC(self, A,B,C):
+        u = B-A
+        v = np.array([u[1], -u[0]])
+        return np.abs((A-C)@v)/np.linalg.norm(v)
+
 
 class UnsupervisedClustering(IdentityClustering):
     def __init__(self,
                  clustering_algorithm=RandomClusteringAlgorithm,
                  clustering_args: dict={},
-                 select_best_n_cluster: bool=False,
-                 max_n_clustering_to_try: int=16,
                  debug=False
               ):
-        self.select_best_n_cluster = select_best_n_cluster
         self.clustering_algorithm = clustering_algorithm  # must implement fit_predict()
         self.clustering_args = clustering_args
         self.debug = debug
@@ -64,31 +113,13 @@ class UnsupervisedClustering(IdentityClustering):
         cluster_obj = self.clustering_algorithm(**args)
         return cluster_obj
 
-    # from Arthur's code
-    def _pick_optimal_k(self, embeddings):
-        Sum_of_squared_distances = []
-        for n in range(1, min(len(embeddings), self.max_clusters)):
-            clustering = self._initialize_clustering(n)
-            model = clustering.fit(embeddings)
-            #FIXME only works for k-means
-            Sum_of_squared_distances.append(model.inertia_)
-        dists = [self._distance_lineAB_pointC(
-                np.array([K[0],Sum_of_squared_distances[0]]),
-                np.array([K[-1],Sum_of_squared_distances[-1]]),
-                np.array([k,p]))
-            for (k,p) in zip(K,Sum_of_squared_distances)]
-        return np.argmax(dists) + 1
-
     def get_clusters(self,  embeds: Embeddings, doc: Document) -> typing.Tuple[Embeddings, Document]:
         # flatten doc/embeds into array of sentences/embeds
         all_embeddings, all_sentences = self.flatten(embeds, doc)
         if len(all_embeddings) == 1:
             return embeds, doc  # do not cluster if only 1 sentence
         # get cluster labels from embeddings
-        if self.select_best_n_cluster:
-            n_cluster = self._pick_optimal_k(all_embeddings)
-        else:
-            n_cluster = min(len(all_embeddings), len(embeds.section))
+        n_cluster = min(len(all_embeddings), len(embeds.section))
         cluster_obj = self._initialize_clustering(n_cluster)
         try:
             cluster_labels = cluster_obj.fit_predict(all_embeddings)
@@ -116,14 +147,6 @@ class UnsupervisedClustering(IdentityClustering):
         doc_obj = Document(sections=doc_sections, reference=doc.reference)
         # sanity check
         if self.debug:
-            similarities = self.cos_similarity(all_embeddings)
-            print(np.min(similarities), np.max(similarities), np.mean(similarities))
-            # assert np.all(np.sum(cluster_masks, axis=0) == 1), cluster_masks
-            # # TODO plot clusterings
-            # print(all_embeddings.shape, cluster_labels.shape, cluster_labels)
-            # n_sentences = sum([len(x.sentences) for x in doc.sections])
-            # n_new_sentences = sum([len(x.sentences) for x in doc_obj.sections])
-            # assert n_sentences == n_new_sentences, (n_sentences, n_new_sentences)
             for id, sentences in zip(cluster_ids, section_sentences):
                 print(id, 'n_sentences =', len(sentences))
                 print_sentence_summary(sentences)
