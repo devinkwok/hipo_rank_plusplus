@@ -5,7 +5,7 @@ from hipo_rank.embedders.rand import RandEmbedder
 from hipo_rank.embedders.bert import BertEmbedder
 from hipo_rank.embedders.sent_transformers import SentTransformersEmbedder
 
-from hipo_rank.similarities.cos import CosSimilarity, intrasection_similarity
+from hipo_rank.similarities.cos import CosSimilarity
 
 from hipo_rank.directions.undirected import Undirected
 from hipo_rank.directions.order import OrderBased
@@ -17,9 +17,10 @@ from hipo_rank.scorers.multiply import MultiplyScorer
 from hipo_rank.summarizers.default import DefaultSummarizer
 from hipo_rank.evaluators.rouge import evaluate_rouge
 
-from hipo_rank.clusterings.cluster import IdentityClustering, remove_duplicates_from_doc
+from hipo_rank.clusterings.cluster import IdentityClustering, \
+    remove_duplicates_from_doc, intrasection_similarity, section_stats
 from hipo_rank.clusterings.unsupervised import UnsupervisedClustering, \
-     RandomClusteringAlgorithm, SpectralWithCosineAffinity, KMeansWithBestK, section_stats
+     RandomClusteringAlgorithm, SpectralWithCosineAffinity, KMeansWithBestK
 from sklearn.cluster import SpectralClustering
 
 from pathlib import Path
@@ -49,13 +50,13 @@ EMBEDDERS = [
       }
     ),
     ("rand_200", RandEmbedder, {"dim": 200}),
-    ("pacsum_bert", BertEmbedder,
-     {"bert_config_path": "models/pacssum_models/bert_config.json",
-      "bert_model_path": "models/pacssum_models/pytorch_model_finetuned.bin",
-      "bert_tokenizer": "bert-base-uncased",
-      "cuda": True,
-      }
-    ),
+    # ("pacsum_bert", BertEmbedder,
+    #  {"bert_config_path": "models/pacssum_models/bert_config.json",
+    #   "bert_model_path": "models/pacssum_models/pytorch_model_finetuned.bin",
+    #   "bert_tokenizer": "bert-base-uncased",
+    #   "cuda": True,
+    #   }
+    # ),
 ]
 SIMILARITIES = [
     ("cos", CosSimilarity, {}),
@@ -69,6 +70,11 @@ DIRECTIONS = [
 ]
 CLUSTERINGS = [
     ('none', IdentityClustering, {}),
+    ('random', UnsupervisedClustering, {
+            "clustering_algorithm": RandomClusteringAlgorithm,
+            "clustering_args": {},
+            "debug": DEBUG,
+        }),
     ('kmeanspickk', UnsupervisedClustering, {
             "clustering_algorithm": KMeansWithBestK,
             "clustering_args": {"select_best_n_cluster": True, "range": (3,4)},
@@ -87,11 +93,6 @@ CLUSTERINGS = [
     ('spectralrbf', UnsupervisedClustering, {
             "clustering_algorithm": SpectralClustering,
             "clustering_args": {"affinity": "rbf", "assign_labels": "kmeans"},
-            "debug": DEBUG,
-        }),
-    ('random', UnsupervisedClustering, {
-            "clustering_algorithm": RandomClusteringAlgorithm,
-            "clustering_args": {},
             "debug": DEBUG,
         }),
 ]

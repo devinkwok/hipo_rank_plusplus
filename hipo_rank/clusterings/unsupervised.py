@@ -151,9 +151,3 @@ class UnsupervisedClustering(IdentityClustering):
                 print(id, 'n_sentences =', len(sentences))
                 print_sentence_summary(sentences)
         return embeds_obj, doc_obj
-
-def section_stats(doc: Document):
-    n_sections = len(doc.sections)
-    n_sentences = np.array([len(s.sentences) for s in doc.sections])
-    return [n_sections, np.mean(n_sentences), np.min(n_sentences), np.max(n_sentences)]
-
