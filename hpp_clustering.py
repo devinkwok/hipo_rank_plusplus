@@ -31,7 +31,7 @@ import torch
 from tqdm import tqdm
 
 
-DEBUG = True
+DEBUG = False
 
 REMOVE_DUPLICATE_SENTENCES = [True, False]
 DATASETS = [
@@ -62,37 +62,37 @@ DIRECTIONS = [
     ("frontloaded_edge", EdgeBased, {"u": 1.2}),
 ]
 CLUSTERINGS = [
-    # ('none', IdentityClustering, {}),
-    # ('random', UnsupervisedClustering, {
-    #         "clustering_algorithm": RandomClusteringAlgorithm,
-    #         "clustering_args": {},
-    #         "debug": DEBUG,
-    #     }),
+    ('none', IdentityClustering, {}),
+    ('random', UnsupervisedClustering, {
+            "clustering_algorithm": RandomClusteringAlgorithm,
+            "clustering_args": {},
+            "debug": DEBUG,
+        }),
     ('louvain_clustering', UnsupervisedClustering, {
         "clustering_algorithm": LouvainClustering,
         "clustering_args": {},
         "debug": DEBUG,}   
     ),
-    # ('kmeanspickk', UnsupervisedClustering, {
-    #         "clustering_algorithm": KMeansWithBestK,
-    #         "clustering_args": {"select_best_n_cluster": True, "range": (3,4)},
-    #         "debug": DEBUG,
-    #     }),
-    # ('kmeanssectk', UnsupervisedClustering, {
-    #         "clustering_algorithm": KMeansWithBestK,
-    #         "clustering_args": {"select_best_n_cluster": False},
-    #         "debug": DEBUG,
-    #     }),
-    # ('spectralcos', UnsupervisedClustering, {
-    #         "clustering_algorithm": SpectralWithCosineAffinity,
-    #         "clustering_args": {"assign_labels": "kmeans"},
-    #         "debug": DEBUG,
-    #     }),
-    # ('spectralrbf', UnsupervisedClustering, {
-    #         "clustering_algorithm": SpectralClustering,
-    #         "clustering_args": {"affinity": "rbf", "assign_labels": "kmeans"},
-    #         "debug": DEBUG,
-    #     }),
+    ('kmeanspickk', UnsupervisedClustering, {
+            "clustering_algorithm": KMeansWithBestK,
+            "clustering_args": {"select_best_n_cluster": True, "range": (3,4)},
+            "debug": DEBUG,
+        }),
+    ('kmeanssectk', UnsupervisedClustering, {
+            "clustering_algorithm": KMeansWithBestK,
+            "clustering_args": {"select_best_n_cluster": False},
+            "debug": DEBUG,
+        }),
+    ('spectralcos', UnsupervisedClustering, {
+            "clustering_algorithm": SpectralWithCosineAffinity,
+            "clustering_args": {"assign_labels": "kmeans"},
+            "debug": DEBUG,
+        }),
+    ('spectralrbf', UnsupervisedClustering, {
+            "clustering_algorithm": SpectralClustering,
+            "clustering_args": {"affinity": "rbf", "assign_labels": "kmeans"},
+            "debug": DEBUG,
+        }),
 ]
 SCORERS = [
     ("add_f=0.0_b=1.0_s=1.0", AddScorer, {}),
