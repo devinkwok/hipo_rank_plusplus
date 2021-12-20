@@ -3,7 +3,6 @@ from hipo_rank.dataset_iterators.pubmed import PubmedDataset, save_to_file
 from hipo_rank.embedders.w2v import W2VEmbedder
 from hipo_rank.embedders.rand import RandEmbedder
 from hipo_rank.embedders.bert import BertEmbedder
-from hipo_rank.embedders.sent_transformers import SentTransformersEmbedder
 
 from hipo_rank.similarities.cos import CosSimilarity
 
@@ -12,15 +11,16 @@ from hipo_rank.directions.order import OrderBased
 from hipo_rank.directions.edge import EdgeBased
 
 from hipo_rank.scorers.add import AddScorer
-from hipo_rank.scorers.multiply import MultiplyScorer
 
 from hipo_rank.summarizers.default import DefaultSummarizer
 from hipo_rank.evaluators.rouge import evaluate_rouge
 
 from hipo_rank.clusterings.cluster import IdentityClustering, \
+    UnsupervisedClustering, RandomClusteringAlgorithm, \
     remove_duplicates_from_doc, intrasection_similarity, section_stats
-from hipo_rank.clusterings.unsupervised import UnsupervisedClustering, \
-     RandomClusteringAlgorithm, SpectralWithCosineAffinity, KMeansWithBestK
+from hipo_rank.clusterings.kmeans import KMeansWithBestK
+from hipo_rank.clusterings.spectral import SpectralWithCosineAffinity
+from hipo_rank.clusterings.louvain import LouvainClustering
 from sklearn.cluster import SpectralClustering
 
 from pathlib import Path
@@ -31,7 +31,7 @@ import torch
 from tqdm import tqdm
 
 
-DEBUG = False
+DEBUG = True
 
 REMOVE_DUPLICATE_SENTENCES = [True, False]
 DATASETS = [
@@ -41,22 +41,15 @@ DATASETS = [
      ),
 ]
 EMBEDDERS = [
+    ("rand_200", RandEmbedder, {"dim": 200}),
     ("bert", BertEmbedder,
      {"bert_config_path": "",
       "bert_model_path": "",
       "bert_tokenizer": "bert-base-cased",
       "bert_pretrained": "bert-base-cased",
-      "cuda": True,
+      "cuda": not DEBUG,
       }
     ),
-    ("rand_200", RandEmbedder, {"dim": 200}),
-    # ("pacsum_bert", BertEmbedder,
-    #  {"bert_config_path": "models/pacssum_models/bert_config.json",
-    #   "bert_model_path": "models/pacssum_models/pytorch_model_finetuned.bin",
-    #   "bert_tokenizer": "bert-base-uncased",
-    #   "cuda": True,
-    #   }
-    # ),
 ]
 SIMILARITIES = [
     ("cos", CosSimilarity, {}),
@@ -69,32 +62,37 @@ DIRECTIONS = [
     ("frontloaded_edge", EdgeBased, {"u": 1.2}),
 ]
 CLUSTERINGS = [
-    ('none', IdentityClustering, {}),
-    ('random', UnsupervisedClustering, {
-            "clustering_algorithm": RandomClusteringAlgorithm,
-            "clustering_args": {},
-            "debug": DEBUG,
-        }),
-    ('kmeanspickk', UnsupervisedClustering, {
-            "clustering_algorithm": KMeansWithBestK,
-            "clustering_args": {"select_best_n_cluster": True, "range": (3,4)},
-            "debug": DEBUG,
-        }),
-    ('kmeanssectk', UnsupervisedClustering, {
-            "clustering_algorithm": KMeansWithBestK,
-            "clustering_args": {"select_best_n_cluster": False},
-            "debug": DEBUG,
-        }),
-    ('spectralcos', UnsupervisedClustering, {
-            "clustering_algorithm": SpectralWithCosineAffinity,
-            "clustering_args": {"assign_labels": "kmeans"},
-            "debug": DEBUG,
-        }),
-    ('spectralrbf', UnsupervisedClustering, {
-            "clustering_algorithm": SpectralClustering,
-            "clustering_args": {"affinity": "rbf", "assign_labels": "kmeans"},
-            "debug": DEBUG,
-        }),
+    # ('none', IdentityClustering, {}),
+    # ('random', UnsupervisedClustering, {
+    #         "clustering_algorithm": RandomClusteringAlgorithm,
+    #         "clustering_args": {},
+    #         "debug": DEBUG,
+    #     }),
+    ('louvain_clustering', UnsupervisedClustering, {
+        "clustering_algorithm": LouvainClustering,
+        "clustering_args": {},
+        "debug": DEBUG,}   
+    ),
+    # ('kmeanspickk', UnsupervisedClustering, {
+    #         "clustering_algorithm": KMeansWithBestK,
+    #         "clustering_args": {"select_best_n_cluster": True, "range": (3,4)},
+    #         "debug": DEBUG,
+    #     }),
+    # ('kmeanssectk', UnsupervisedClustering, {
+    #         "clustering_algorithm": KMeansWithBestK,
+    #         "clustering_args": {"select_best_n_cluster": False},
+    #         "debug": DEBUG,
+    #     }),
+    # ('spectralcos', UnsupervisedClustering, {
+    #         "clustering_algorithm": SpectralWithCosineAffinity,
+    #         "clustering_args": {"assign_labels": "kmeans"},
+    #         "debug": DEBUG,
+    #     }),
+    # ('spectralrbf', UnsupervisedClustering, {
+    #         "clustering_algorithm": SpectralClustering,
+    #         "clustering_args": {"affinity": "rbf", "assign_labels": "kmeans"},
+    #         "debug": DEBUG,
+    #     }),
 ]
 SCORERS = [
     ("add_f=0.0_b=1.0_s=1.0", AddScorer, {}),

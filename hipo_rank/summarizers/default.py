@@ -1,5 +1,4 @@
 from hipo_rank import Scores, Document, Summary
-from hipo_rank.clusterings.unsupervised import print_sentence_summary
 
 
 class DefaultSummarizer:
@@ -14,14 +13,7 @@ class DefaultSummarizer:
         while True:
             sect_idx = sorted_scores[i][1]
             local_idx = sorted_scores[i][2]
-            try:  # catch bad summaries
-                sentence = doc.sections[sect_idx].sentences[local_idx]
-            except IndexError as e:
-                print(e)
-                for section in doc.sections:
-                    print_sentence_summary(section.sentences)
-                print(doc)
-                print(sect_idx, local_idx)
+            sentence = doc.sections[sect_idx].sentences[local_idx]
             num_words += len(sentence.split())
             if self.stay_under_num_words and num_words > self.num_words:
                 break

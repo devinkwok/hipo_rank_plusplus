@@ -1,4 +1,17 @@
-# HipoRank
+# HipoRank++
+(COMP 550 Fall final project): study on whether using clustering to generate document sections can improve HipoRank performance. To use, download PubMed `val.txt` from [https://github.com/armancohan/long-summarization](https://github.com/armancohan/long-summarization) to `data/pubmed-release`, and follow instructions from original README below.
+
+The following experiments are used in the report:
+- `hpp_baseline.py`: generates baselines
+- `hpp_clustering.py`: compares all clustering methods
+- `hpp_stas.ipynb`: displays per-section statistics
+
+The following generated results have been included in the repository:
+- `results/hpp_clustering/*/rouge_results.json`: ROUGE evaluations
+- `results/hpp_clustering/*-stats.py`: section statistics
+- `results/hpp_clustering/*-clusters-20.txt`: selected clusters for human evaluation
+
+# Original README
 Unsupervised and extractive long document summarization with **Hi**erarchichal and **Po**sitional information. Contains code for [Discourse-Aware Unsupervised Summarization of Long Scientific Documents](https://arxiv.org/abs/2005.00513) accepted at EACL 2021.
 
 # Requirements
