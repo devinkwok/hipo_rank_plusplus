@@ -1,0 +1,137 @@
+[
+  {
+    "num_sects": 12,
+    "num_sents": 109,
+    "summary": [
+      [
+        "to our knowledge , this is the first multicenter , retrospective registry in india involving patients with vte that reflect real - world clinical practice . in contrast with the western data in which vte is predominantly a disease of older age , 44% patients in our study were between 40 and 59 years of age while 34% were below 40 years , particularly those with pe . in a study from north india ,",
+        0.9976222306910854,
+        0,
+        2,
+        2
+      ],
+      [
+        "our finding complements that from the endorse study in which 55% of the medical patients at risk of vte had cardiovascular disease . majority ( 53% ) of patients in our study had co - morbid cardiovascular disease including diabetes mellitus ; it is possible that these patients visited a cardiologist for their cardiovascular ailment ( s ) and were then referred by the cardiologist to vascular disease specialist ( investigator ) .",
+        0.9970617435822937,
+        3,
+        5,
+        33
+      ],
+      [
+        "dvt complicated by pe ( 60% ) and pe alone ( 75% ) were more frequently shifted to intensive care unit than those who had dvt alone ( 25% ) . similar to published data in which hospital readmission rate for vte was 5% for primary and 14% for secondary diagnosis , we report a hospital readmission rate of 6% ; however we do not know the cause for readmission .",
+        0.996988538742886,
+        3,
+        10,
+        38
+      ]
+    ]
+  },
+  {
+    "num_sects": 11,
+    "num_sents": 66,
+    "summary": [
+      [
+        "jones et al . showed by directly interviewing participants and review of medical records that the qvsfs had a nppv and ppv of 0.96 and 0.71 respectively making the 8-item qvsfs a sensitive and valid tool , and a structured telephone interview format of questionnaire administration still had an excellent sensitivity of 1.0 , specificity of 0.86 , positive predictive value of 0.36 and negative predictive value of 1.0 among participants aged 60 years and above .",
+        0.9981657240827695,
+        2,
+        0,
+        13
+      ],
+      [
+        "thus , the sample size of 100 per linguistic category ( akan , yoruba , hausa ) will be sufficient detect an effect size as small as 10% allowing up to 10% false positive rates and control to case ratio of the standard deviation of the responses to be 0.5 as suggested by obuchowski and mcclish .",
+        0.9979300955118368,
+        2,
+        1,
+        14
+      ],
+      [
+        "after this thorough evaluation the neurologist makes a diagnosis which is our gold standard . assuming that the standard test has an accuracy of 75% as measured by the area under the roc curve ( auc ) , a sample of 35 cases and 35 controls achieve 82% power to detect an extra accuracy by the proposed test of 15% ( auc = 90% in the proposed test ) using a two - sided test at a significance level of 0.05 . the sample size required increases to 80 per group in order to detect a difference of 10% ( auc = 85% in the proposed test ) under the same conditions .",
+        0.9978820170820698,
+        3,
+        5,
+        20
+      ]
+    ]
+  },
+  {
+    "num_sects": 5,
+    "num_sents": 76,
+    "summary": [
+      [
+        "second , the methodology used to measure inequality is not perfect and biased with limitations in measuring inequality ; for example ,  utilizing the gini coefficient showed that there is no significant inequality in the distribution of pubic cardiovascular health services in iran , though , primary information on the distribution of beds and cardiologists showed that about one - fourth of the ccu beds are existed in tehran , where one - sixth of the total population of iran is living  .",
+        0.9978033635747298,
+        0,
+        11,
+        11
+      ],
+      [
+        "our study descriptive statistics showed a skewed distribution of ccu beds in iran , so that the capital tehran , accommodating one sixth of the total population of iran , owns one fourth of total ccu beds in iran . in a similar study by ameryoun et al . on the non - cardiac intensive care beds in tehran the ratios of all non - cardiac intensive care beds were almost two times higher than other provinces ( 14 ) . also , in another study by tofighi et al . on the distribution of specialists , tehran owns 23% of all specialists across the country ( 18 ) .",
+        0.9977745658136872,
+        3,
+        12,
+        56
+      ],
+      [
+        "another study conducted in 2002 using morris imbalance coefficient , showed the province of yazd stands at the highest rank in terms of the number of hospital beds , and the province of semnan ranks the highest in terms of the number of health centers ( 19 ) . \n \n a study conducted in the  netherlands on the distribution of ccu beds in 24 university hospitals for the period 2004 - 2006 reported gini coefficients of 0.638 , 0.569 and 0.569 , which reflected unequal distribution ( 20 ) . a study conducted at 2006 reflects equal distribution of non - cardiac intensive care beds in iran .",
+        0.9977663612732134,
+        4,
+        6,
+        68
+      ]
+    ]
+  },
+  {
+    "num_sects": 3,
+    "num_sents": 34,
+    "summary": [
+      [
+        "for rif , mutation frequencies in beijing genotype strains were high compared with those in eai genotype strains , and the selection of rif - resistant mutants among beijing strains , but not eai strains , occurred within a wide range of rif concentrations . in addition , the killing capacity of rif toward the beijing genotype is dependent on the density of mycobacteria : high concentrations of rif are required to achieve 100% killing of high - density beijing genotype populations but not of high - density eai genotype populations .",
+        0.9978122478092483,
+        1,
+        9,
+        23
+      ],
+      [
+        "the mutation frequencies of the beijing and eai genotype strains were similar for inh , mxf , and amk , but they were significantly different for rif ( 1.6  10 to 5.4  10 for beijing strains vs. 6.3  10 to 3.8  10 for eai strains ; p = 0.003 , unpaired mann - whitney test ) ( table 1 ; figure 1 ) . because rifamycin drugs are widely used to treat tb , the difference in the mutation frequencies of beijing and eai genotype strains for rif is a major finding .",
+        0.9976998449220097,
+        1,
+        1,
+        15
+      ],
+      [
+        "we determined the mutation frequencies of the beijing and eai genotype strains by using previously defined critical drug concentrations of 1 mg / l for inh , rif , and mxf and 5 mg / l for amk ( 11,12 ) ( for details , see the technical appendix ) .",
+        0.9973814615525338,
+        1,
+        0,
+        14
+      ]
+    ]
+  },
+  {
+    "num_sects": 10,
+    "num_sents": 104,
+    "summary": [
+      [
+        "none of the patients reported any pulling or twisting of the can or pain from heating of the s - icd electrode . for scans of the brain , lumbar spine , knee , and cervical spine , no effect from image artefact was noted in the anatomical area of interest . however , for scans of the cardiac area , image artefact was noted to interfere with the ability to see parts of the left ventricle , though the right ventricle of the heart was unaffected and could be imaged usefully .",
+        0.9978735180315611,
+        5,
+        9,
+        53
+      ],
+      [
+        "various types of clinical mri systems currently use a superconductive magnet that creates a static magnetic field strength , typically 1.5 or 3 t. the use of mri with most pacemakers and icds is considered a contraindication due to potential hazards , including heating of the electrode that resides in or on the heart , damage to myocardium , elevation of pacing thresholds , unintended induction of ventricular tachycardia ( vt ) or ventricular fibrillation ( vf ) , pacing inhibition , permanent device malfunction , and distortion of the mri scan . recently ,",
+        0.9978060805936159,
+        0,
+        1,
+        1
+      ],
+      [
+        ". the s - icd depends less upon being in direct contact with the myocardium to function and instead uses far - field sensing and stimulation to provide the shock and post - shock pacing therapy . as a consequence , unlike transvenous systems heating near or around the electrode can not harm the myocardium , which could present with possible safety consequences such as an elevation in pacing thresholds or scarring of the myocardium , but it may still cause serious patient discomfort . because the s - icd is larger than modern transvenous icd 's , there may be more potential for the can to experience heating due to the magnetic gradient or rf field .",
+        0.9978002431865204,
+        0,
+        6,
+        6
+      ]
+    ]
+  }
+]

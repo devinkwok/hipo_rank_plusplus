@@ -1,0 +1,228 @@
+[
+  {
+    "num_sects": 12,
+    "num_sents": 109,
+    "summary": [
+      [
+        "real world data reflecting actual day - to - day clinical practice in vte over a period of 5 years across three sites in india showed that vte is not uncommon in indian patients and that acute dvt was responsible for the substantial burden of vte .",
+        0.995963142119191,
+        11,
+        0,
+        107
+      ],
+      [
+        "the intent was to collect and provide data that would reflect actual day - to - day clinical practice , rather than results of highly controlled clinical trials with restricted study populations and imposed experimental intervention .",
+        0.9951506765451041,
+        0,
+        11,
+        11
+      ],
+      [
+        "liesel c. dsilva is and dr . sadhna j. joglekar was full - time employee of glaxosmithkline pharmaceuticals limited .",
+        0.9950806522091142,
+        11,
+        1,
+        108
+      ],
+      [
+        "venous thromboembolism ( vte ) comprising of deep vein thrombosis ( dvt ) and pulmonary embolism ( pe ) can result in significant mortality , morbidity , and healthcare expenditure .",
+        0.9950051026182183,
+        0,
+        0,
+        0
+      ],
+      [
+        "consecutive medical records of inpatients and outpatients between january 2006 and december 2010 , meeting eligibility criteria ( confirmed diagnosis of acute or acute - on - chronic dvt by doppler ultrasound scan and/or pe by chest computed tomography scan , pulmonary angiography or v / q scan ) were identified and collected from the general medical records and/or radiology departments at each of the three participating hospitals .",
+        0.913285859611728,
+        1,
+        0,
+        12
+      ]
+    ]
+  },
+  {
+    "num_sects": 11,
+    "num_sents": 66,
+    "summary": [
+      [
+        "this study seeks to validate the 8-item qvsfs at 5 centers in nigeria and ghana which are involved in the on - going nih supported stroke investigative research and educational networks ( siren ) study .",
+        0.9957680343966205,
+        0,
+        18,
+        18
+      ],
+      [
+        "there is an epidemic of stroke in low and middle - income countries due to rapidly increasing prevalence of vascular risk factors such as hypertension , diabetes mellitus , dyslipidaemia .",
+        0.9952783866068743,
+        0,
+        0,
+        0
+      ],
+      [
+        "the need has thus arisen to conduct studies aimed at epidemiologic , genetic and phenotypic characterisation of stroke in sub - saharan africa to provide evidence - based information to confront this menace . to this end",
+        0.9407091906824041,
+        0,
+        1,
+        1
+      ],
+      [
+        "an approach to overcome this limitation would be to examine participants by neurologists or to use a cranial ct scan for verification in a subset of participants .",
+        0.9124853019179968,
+        0,
+        17,
+        17
+      ],
+      [
+        "participants will be recruited from five tertiary referral medical centers in west africa namely the komfo anokye teaching hospital ( kath ) in kumasi , ghana ; the university college hospital ( uch ) , ibadan , nigeria ; federal medical centre ( fmc ) , abeokuta , nigeria ; ahmadu bello university hospital ( abuh ) , zaria , nigeria and aminu kano teaching hospital ( akth ) , kano , nigeria ( fig .",
+        0.906306559065294,
+        1,
+        0,
+        19
+      ]
+    ]
+  },
+  {
+    "num_sects": 5,
+    "num_sents": 76,
+    "summary": [
+      [
+        "since accessibility to intensive healthcare , in particular for cardiovascular conditions , is of utmost importance and since the appropriate distribution of coronary care unit ( ccu ) beds and cardiologists can be taken as a measure , the present study aims to examine the inequality of the geographical distribution of ccu beds and cardiologists in iran using the gini coefficient and the lorenz curve . \n",
+        0.9972306155351233,
+        0,
+        14,
+        14
+      ],
+      [
+        "\n cardiovascular diseases account for the highest mortality rate worldwide and are expected to be the major cause of death by 2020 ( 1 ) .",
+        0.9950433858021733,
+        0,
+        0,
+        0
+      ],
+      [
+        "\n using gini measure showed that there is no significant inequality in the distribution of pubic cardiovascular health services in iran .",
+        0.9949034072636699,
+        4,
+        0,
+        73
+      ],
+      [
+        "moreover , even the equal distribution of cardiovascular health facilities such as ccu beds , does not mean they are sufficiently provided in iran . \n",
+        0.9947855372136984,
+        4,
+        2,
+        75
+      ],
+      [
+        "studies in iran showed that cardiovascular diseases are the most important cause of death and accounted for 42% of all deaths in 2002 ( 2 ) .",
+        0.9247404116478251,
+        0,
+        1,
+        1
+      ],
+      [
+        "thus , the gini index and lorenz curve are commonly used in analyzing the inequality in distribution of health care resources ( 13 - 16 ) . \n \n",
+        0.8889932096559992,
+        0,
+        13,
+        13
+      ],
+      [
+        "timely diagnosis and proactive measures play a significant role in effective treatment , prevention development of heart damages and the faster recovery of cardiovascular diseases . the time it takes to reach a hospital or a coronary care unit ( ccu ) and the time spent for diagnostic and treatment measures are factors influencing the delay or loss of time from the outset of severe cardiac infarction to the beginning of treatment ( 3 ) .",
+        0.8549250868191566,
+        0,
+        2,
+        2
+      ]
+    ]
+  },
+  {
+    "num_sects": 3,
+    "num_sents": 34,
+    "summary": [
+      [
+        "results of a liquid culturing system ( bd bactec mgit 960 system ; bd diagnostics , sparks , md , us ) ( for details , see the technical appendix ) showed that all 5 beijing and 5 eai genotype strains were susceptible to isoniazid ( inh ) , rifampin ( rif ) , moxifloxacin ( mxf ) , and amikacin ( amk ) .",
+        0.9969672534044385,
+        0,
+        0,
+        0
+      ],
+      [
+        "the difference in the range of mutant prevention concentrations for the beijing and eai genotype strains was small : inh , 128256 mg / l ; rif , 2561,024 mg / l ; and mxf , 28 mg / l .",
+        0.9961684095790159,
+        0,
+        27,
+        27
+      ],
+      [
+        "mics were determined by using the agar proportion method ( 11 ) , which showed that ranges were small for the beijing and eai genotype strains : inh , 0.0620.125 mg / l ; rif , 0.1251 mg / l ; mxf , 0.1250.5 mg / l ; and amk , 0.52 mg / l .",
+        0.9595025670216545,
+        0,
+        1,
+        1
+      ],
+      [
+        "analysis of rif - resistant beijing mutants showed the following altered rpob gene sequences : cacgac ( h526d ) , cactac ( h526y ) , and tcgttg ( s531l ) , as assessed by using the genotype mtbdrplus ( hain lifescience , nehren , germany ) assay ( for details , see the technical appendix ) . for 3 of the 4 anti - tb drugs ,",
+        0.941534513526435,
+        0,
+        26,
+        26
+      ]
+    ]
+  },
+  {
+    "num_sects": 10,
+    "num_sents": 104,
+    "summary": [
+      [
+        "the need for magnetic resonance imaging ( mri ) in patients with an implanted pacemaker or implantable cardioverter - defibrillator ( icd ) is a growing clinical issue .",
+        0.9954043095301403,
+        0,
+        0,
+        0
+      ],
+      [
+        "this single - centre prospective non - controlled study describes the first use of mri in patients with an implanted s - icd .",
+        0.9950327025491659,
+        0,
+        8,
+        8
+      ],
+      [
+        "this study was supported by iga mz r nt12094/2011 , research project charles university in prague , prvouk p34 and unce 204010/2012 .",
+        0.994129408151962,
+        9,
+        0,
+        102
+      ],
+      [
+        "funding to pay the open access publication charges for this article was provided by iga mz r nt12094/2011 .",
+        0.9934673239304843,
+        9,
+        1,
+        103
+      ],
+      [
+        "patients with implanted s - icd systems ( boston scientific sqrx model 1010 and q - trak model 3010 ) were enrolled for mri testing over a period of 18 months . the s - icd system implanted in this patient cohort was composed of a",
+        0.8967423253172241,
+        1,
+        0,
+        9
+      ],
+      [
+        "long - term regular clinical follow - up and checking of the device were performed .",
+        0.893772396747263,
+        1,
+        28,
+        37
+      ],
+      [
+        "it is estimated that as many as 75% of active cardiac device recipients will become indicated for mri . currently , the vast majority of such devices are contraindicated for use with an mri . in european heart rhythm association survey , published recently for non - mri - certified icds ( 0.51.5 t field strength ) ,",
+        0.8723213988323268,
+        0,
+        1,
+        1
+      ]
+    ]
+  }
+]

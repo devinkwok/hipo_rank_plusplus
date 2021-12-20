@@ -1,0 +1,242 @@
+[
+  {
+    "num_sects": 12,
+    "num_sents": 109,
+    "summary": [
+      [
+        "co - morbidities in venous thromboembolism patients of the 476 patients with dvt , 2% ( 9 ) had upper extremity dvt , 97% ( 462 ) had lower extremity dvt and the site of dvt was not known in 5 patients .",
+        0.9968549648299313,
+        0,
+        0,
+        0
+      ],
+      [
+        "it is estimated that 20 million cases of lower extremity dvt occur in the usa alone .",
+        0.9523219507313359,
+        1,
+        0,
+        6
+      ],
+      [
+        "given the growing burden of vte in india and lack of substantial indian data on characteristics of vte patients , use of diagnostics tools , prophylaxis , treatment options , and clinical outcomes in vte , there was a need to systematically collect such data .",
+        0.9130797287924013,
+        1,
+        1,
+        7
+      ],
+      [
+        "data on patient characteristics , clinical outcomes , predictors of mortality in acute dvt , management strategies and temporal trends in vte .",
+        0.9109412891196741,
+        2,
+        0,
+        19
+      ],
+      [
+        "incidence of acute deep vein thrombosis ( with or without pulmonary embolism ) over a 5 years period ( 20062010 ) at three sites",
+        0.8962509156778449,
+        0,
+        1,
+        1
+      ],
+      [
+        "descriptive statistics were used to present patient characteristics , management strategies , and clinical outcomes of patients .",
+        0.8696705068691375,
+        1,
+        2,
+        8
+      ],
+      [
+        "vte is not only disabling but also prolongs hospital stay and increases the cost of treatment .",
+        0.8690176835745343,
+        3,
+        0,
+        28
+      ],
+      [
+        "( myocardial infarction , heart failure , chronic obstructive pulmonary disease , ventilator dependency , sepsis , or pneumonia ) [ table 4 ] .",
+        0.8496046882304773,
+        2,
+        1,
+        20
+      ]
+    ]
+  },
+  {
+    "num_sects": 11,
+    "num_sents": 66,
+    "summary": [
+      [
+        "the lack of knowledge of stroke symptoms might impact negatively on the performance of stroke symptom questionnaires .",
+        0.993464830429165,
+        0,
+        0,
+        0
+      ],
+      [
+        "the need has thus arisen to conduct studies aimed at epidemiologic , genetic and phenotypic characterisation of stroke in sub - saharan africa to provide evidence - based information to confront this menace . to this end",
+        0.9506823185991198,
+        1,
+        0,
+        3
+      ],
+      [
+        "jones et al . showed by directly interviewing participants and review of medical records that the qvsfs had a nppv and ppv of 0.96 and 0.71 respectively making the 8-item qvsfs a sensitive and valid tool , and a structured telephone interview format of questionnaire administration still had an excellent sensitivity of 1.0 , specificity of 0.86 , positive predictive value of 0.36 and negative predictive value of 1.0 among participants aged 60 years and above .",
+        0.9074267582125953,
+        2,
+        0,
+        13
+      ],
+      [
+        "thus not only is the 8-item qvsfs a useful tool in identifying stroke - free individuals but it could be used to screen for undiagnosed stroke .",
+        0.8948110869599224,
+        1,
+        1,
+        4
+      ],
+      [
+        "there is an epidemic of stroke in low and middle - income countries due to rapidly increasing prevalence of vascular risk factors such as hypertension , diabetes mellitus , dyslipidaemia .",
+        0.8602823663182001,
+        3,
+        0,
+        15
+      ],
+      [
+        "the sensitivity and specificity of having any of the six symptom questions for stroke detection was 0.82 and 0.62 respectively .",
+        0.8393008188747063,
+        1,
+        2,
+        5
+      ]
+    ]
+  },
+  {
+    "num_sects": 5,
+    "num_sents": 76,
+    "summary": [
+      [
+        "studies conducted in some developing countries showed that the underprivileged are more susceptible to cardiac arrests compared to affluent people ( 4 ) . furthermore , limited accessibility to health services and the inequality in availability of the services furnished by health and treatment systems deprives these people of acceptable and effective treatment ( 5 ) .",
+        0.9974369467287297,
+        0,
+        0,
+        0
+      ],
+      [
+        "therefore , the measurement of fair distribution of health services on top of previous measures has been emphasized by world health organization ( who ) ( 11 ) . \n \n inequality in distribution of health services is measured by different scales one of the most common is the gini coefficient which is based on the lorenz curve ( 12 ) .",
+        0.9520337117219295,
+        0,
+        1,
+        1
+      ],
+      [
+        "first , it is less sensitive to the number of regions and the size of the numerical values in the data material in general .",
+        0.9048800151303656,
+        0,
+        2,
+        2
+      ],
+      [
+        "overall , the mortality rate of severe cardiovascular deaths is 30% , more than half of which occurs before hospitalization ( 3 ) . \n \n",
+        0.895487343371759,
+        1,
+        0,
+        12
+      ],
+      [
+        "thus , the gini index and lorenz curve are commonly used in analyzing the inequality in distribution of health care resources ( 13 - 16 ) . \n \n",
+        0.8603600454714363,
+        1,
+        1,
+        13
+      ],
+      [
+        "third , gini coefficient can be presented visually by means of a lorenz curve ; which provides an effective visualization of the inequalities . \n \n",
+        0.8593016005460705,
+        0,
+        3,
+        3
+      ]
+    ]
+  },
+  {
+    "num_sects": 3,
+    "num_sents": 34,
+    "summary": [
+      [
+        "results of a liquid culturing system ( bd bactec mgit 960 system ; bd diagnostics , sparks , md , us ) ( for details , see the technical appendix ) showed that all 5 beijing and 5 eai genotype strains were susceptible to isoniazid ( inh ) , rifampin ( rif ) , moxifloxacin ( mxf ) , and amikacin ( amk ) .",
+        0.9971916050400277,
+        0,
+        0,
+        0
+      ],
+      [
+        "frequency of rifampin ( rif)-resistant mutants in mycobacterium tuberculosis beijing and east - african / indian ( eai ) genotype strains ( 5 strains each ) originating from vietnam .",
+        0.9574789044934829,
+        0,
+        1,
+        1
+      ],
+      [
+        "furthermore , werngren and hoffner ( 14 ) found an equal mutation frequency for beijing ( 3.6  10 ) and non - beijing ( 4.4  10 ) genotypes . a possible explanation for the discrepancy in findings might be the concentration of rif used in the subculture plates . in our study ,",
+        0.9199180397246917,
+        0,
+        2,
+        2
+      ],
+      [
+        "the critical concentration of 1 mg / l rif was used ( 11 ) , whereas werngren and hoffner used a concentration of 2 mg / l rif .",
+        0.8802600792171167,
+        0,
+        3,
+        3
+      ],
+      [
+        "cultures with low and high densities of beijing-1585 and eai-1627 were investigated as described ( 15 ) .",
+        0.8412824136517065,
+        0,
+        4,
+        4
+      ],
+      [
+        "we determined the mutation frequencies of the beijing and eai genotype strains by using previously defined critical drug concentrations of 1 mg / l for inh , rif , and mxf and 5 mg / l for amk ( 11,12 ) ( for details , see the technical appendix ) .",
+        0.8309529980647751,
+        1,
+        0,
+        14
+      ]
+    ]
+  },
+  {
+    "num_sects": 10,
+    "num_sents": 104,
+    "summary": [
+      [
+        "although it has been shown as an alternative to the standard transvenous icd , its compatibility with mri remains unclear .",
+        0.9948040655267262,
+        0,
+        0,
+        0
+      ],
+      [
+        "patients with implanted s - icd systems ( boston scientific sqrx model 1010 and q - trak model 3010 ) were enrolled for mri testing over a period of 18 months . the s - icd system implanted in this patient cohort was composed of a",
+        0.9465626166273544,
+        1,
+        0,
+        10
+      ],
+      [
+        "various types of clinical mri systems currently use a superconductive magnet that creates a static magnetic field strength , typically 1.5 or 3 t. the use of mri with most pacemakers and icds is considered a contraindication due to potential hazards , including heating of the electrode that resides in or on the heart , damage to myocardium , elevation of pacing thresholds , unintended induction of ventricular tachycardia ( vt ) or ventricular fibrillation ( vf ) , pacing inhibition , permanent device malfunction , and distortion of the mri scan . recently ,",
+        0.9425021693456729,
+        0,
+        1,
+        1
+      ],
+      [
+        "shock zone ( b.p.m.)bat % episode num.101brainnone2302101001202brainnone240220861303l spinein - tolerable240220831403brainnone240220831504brainnone220190691605l spinenone220210541706l spinenone240220681807l spinetolerable240220582908l spinein - tolerablenananana1008brainnonenananana1108l spinenone2302108411209heartnone2402208911310l spinenone2301807911410heartnonenananana1511heartnone2301909711612l spinetolerable2001709721712l spinenone2001709421813c spinenone23019010041913l spinenone23019010042014l spinenone2301908612115kneenone25021010012215l spinenone2502101001s - icd parameters acquired prior- and post - mri were without any change , therefore only one value is presented.indices : na , not available ; l spine , lumbar spine ; c spine , cervical spine .",
+        0.8976949531893942,
+        2,
+        0,
+        19
+      ]
+    ]
+  }
+]
